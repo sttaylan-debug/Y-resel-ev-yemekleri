@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Beşiktaş Yöresel Ev Yemekleri — Sıcak, samimi ve lezzetli Türk ev yemekleri. Günün menüsü, öne çıkan yemekler ve hızlı sipariş.">
+  <title>Beşiktaş Yöresel Ev Yemekleri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sticky Navigation -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-icon">🍲</span>
+        <span class="nav__logo-text">
+          <strong>Beşiktaş</strong>
+          <small>Yöresel Ev Yemekleri</small>
+        </span>
+      </a>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#hero" class="nav__link">Ana Sayfa</a></li>
+        <li><a href="#gunun-menusu" class="nav__link">Günün Menüsü</a></li>
+        <li><a href="#one-cikan" class="nav__link">Yemekler</a></li>
+        <li><a href="#hakkimizda" class="nav__link">Hakkımızda</a></li>
+        <li><a href="#galeri" class="nav__link">Galeri</a></li>
+        <li><a href="#iletisim" class="nav__link">İletişim</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <a href="#siparis" class="btn btn--primary btn--sm">Sipariş Oluştur</a>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero__bg">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1600&q=80" alt="Taze ev yemekleri tabağı" loading="eager">
+        <div class="hero__overlay"></div>
+      </div>
+      <div class="hero__content container">
+        <span class="hero__badge fade-up">Beşiktaş'ın Kalbi</span>
+        <h1 class="hero__title fade-up">Ev Yemeğinin<br><em>En Lezzetli Hali</em></h1>
+        <p class="hero__desc fade-up">Annelerin elinden çıkmış gibi sıcak, doyurucu ve yöresel lezzetler. Her gün taze pişen menülerimizle sofranıza geliyoruz.</p>
+        <div class="hero__buttons fade-up">
+          <a href="#siparis" class="btn btn--primary btn--lg">Sipariş Oluştur</a>
+          <a href="#gunun-menusu" class="btn btn--outline btn--lg">Günün Menüsü</a>
+        </div>
+        <div class="hero__stats fade-up">
+          <div class="hero__stat">
+            <strong>15+</strong>
+            <span>Yıllık Deneyim</span>
+          </div>
+          <div class="hero__stat">
+            <strong>50+</strong>
+            <span>Günlük Yemek</span>
+          </div>
+          <div class="hero__stat">
+            <strong>4.9</strong>
+            <span>Müşteri Puanı</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Günün Menüsü -->
+    <section class="section section--cream" id="gunun-menusu">
+      <div class="container">
+        <div class="section__header fade-up">
+          <span class="section__tag">Her Gün Taze</span>
+          <h2 class="section__title">Günün Menüsü</h2>
+          <p class="section__desc">Bugün mutfağımızdan çıkan özel menü — sıcak, doyurucu ve tam bir ev yemeği deneyimi.</p>
+        </div>
+
+        <div class="menu-card fade-up">
+          <div class="menu-card__image">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80" alt="Günün menüsü" loading="lazy">
+            <span class="menu-card__date">28 Temmuz 2026</span>
+          </div>
+          <div class="menu-card__body">
+            <h3 class="menu-card__title">Bugünün Özel Menüsü</h3>
+            <ul class="menu-card__list">
+              <li>
+                <span class="menu-card__item-name">Mercimek Çorbası</span>
+                <span class="menu-card__item-dot"></span>
+                <span class="menu-card__item-desc">Tereyağlı, limonlu</span>
+              </li>
+              <li>
+                <span class="menu-card__item-name">Kuru Fasulye</span>
+                <span class="menu-card__item-dot"></span>
+                <span class="menu-card__item-desc">Etli, pilav eşliğinde</span>
+              </li>
+              <li>
+                <span class="menu-card__item-name">Tavuk Sote</span>
+                <span class="menu-card__item-dot"></span>
+                <span class="menu-card__item-desc">Sebzeli, baharatlı</span>
+              </li>
+              <li>
+                <span class="menu-card__item-name">Cacık & Turşu</span>
+                <span class="menu-card__item-dot"></span>
+                <span class="menu-card__item-desc">Ev yapımı</span>
+              </li>
+              <li>
+                <span class="menu-card__item-name">Sütlaç</span>
+                <span class="menu-card__item-dot"></span>
+                <span class="menu-card__item-desc">Fırınlanmış, tarçınlı</span>
+              </li>
+            </ul>
+            <div class="menu-card__footer">
+              <div class="menu-card__price">
+                <span>Tam Menü</span>
+                <strong>₺189</strong>
+              </div>
+              <a href="#siparis" class="btn btn--primary">Hemen Sipariş Ver</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Öne Çıkan Yemekler -->
+    <section class="section" id="one-cikan">
+      <div class="container">
+        <div class="section__header fade-up">
+          <span class="section__tag">En Sevilenler</span>
+          <h2 class="section__title">Öne Çıkan Yemekler</h2>
+          <p class="section__desc">Müşterilerimizin en çok tercih ettiği, geleneksel tariflerle hazırlanan lezzetler.</p>
+        </div>
+
+        <div class="dishes-grid">
+          <article class="dish-card fade-up">
+            <div class="dish-card__image">
+              <img src="https://images.unsplash.com/photo-1603133872871-684d89bd64b9?w=600&q=80" alt="Kuru Fasulye" loading="lazy">
+              <span class="dish-card__badge">Popüler</span>
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__title">Kuru Fasulye</h3>
+              <p class="dish-card__desc">Yöresel usulde, etli ve bol soslu. Pilav ile servis edilir.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">₺95</span>
+                <a href="#siparis" class="dish-card__link">Sipariş Ver →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-card fade-up">
+            <div class="dish-card__image">
+              <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80" alt="Hünkar Beğendi" loading="lazy">
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__title">Hünkar Beğendi</h3>
+              <p class="dish-card__desc">Közlenmiş patlıcan püresi üzerinde kuzu eti sote.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">₺145</span>
+                <a href="#siparis" class="dish-card__link">Sipariş Ver →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-card fade-up">
+            <div class="dish-card__image">
+              <img src="https://images.unsplash.com/photo-1512058564366-18598debb3b1?w=600&q=80" alt="Mantı" loading="lazy">
+              <span class="dish-card__badge">Yeni</span>
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__title">El Açması Mantı</h3>
+              <p class="dish-card__desc">Yoğurtlu, sarımsaklı sos ve kıyma dolgulu.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">₺110</span>
+                <a href="#siparis" class="dish-card__link">Sipariş Ver →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-card fade-up">
+            <div class="dish-card__image">
+              <img src="https://images.unsplash.com/photo-1626645738196-c2a863c67e68?w=600&q=80" alt="Karnıyarık" loading="lazy">
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__title">Karnıyarık</h3>
+              <p class="dish-card__desc">Kızarmış patlıcan, kıymalı harç ve domates sosu.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">₺105</span>
+                <a href="#siparis" class="dish-card__link">Sipariş Ver →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-card fade-up">
+            <div class="dish-card__image">
+              <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80" alt="İmam Bayıldı" loading="lazy">
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__title">İmam Bayıldı</h3>
+              <p class="dish-card__desc">Zeytinyağlı, soğanlı ve domatesli klasik lezzet.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">₺85</span>
+                <a href="#siparis" class="dish-card__link">Sipariş Ver →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="dish-card fade-up">
+            <div class="dish-card__image">
+              <img src="https://images.unsplash.com/photo-1574484286762-2ca4a310a9f8?w=600&q=80" alt="Güveç" loading="lazy">
+            </div>
+            <div class="dish-card__body">
+              <h3 class="dish-card__title">Etli Güveç</h3>
+              <p class="dish-card__desc">Sebzelerle birlikte fırında pişmiş, aromatik güveç.</p>
+              <div class="dish-card__footer">
+                <span class="dish-card__price">₺135</span>
+                <a href="#siparis" class="dish-card__link">Sipariş Ver →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hakkımızda -->
+    <section class="section section--cream" id="hakkimizda">
+      <div class="container about">
+        <div class="about__image fade-up">
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=80" alt="Mutfağımızdan bir kare" loading="lazy">
+          <div class="about__experience">
+            <strong>15+</strong>
+            <span>Yıllık<br>Deneyim</span>
+          </div>
+        </div>
+        <div class="about__content fade-up">
+          <span class="section__tag">Hikayemiz</span>
+          <h2 class="section__title">Hakkımızda</h2>
+          <p>Beşiktaş Yöresel Ev Yemekleri, 2010 yılından bu yana Anadolu'nun dört bir yanından gelen tarifleri, ev mutfağının sıcaklığıyla buluşturuyor. Her sabah taze malzemelerle başlayan günümüz, akşam sofralarınıza ulaşana kadar aynı özenle devam eder.</p>
+          <p>Amacımız sadece yemek servis etmek değil; annenizin mutfağından çıkmış gibi hissettirmek. Geleneksel pişirme yöntemlerini modern hijyen standartlarıyla birleştiriyor, her tabağı sevgiyle hazırlıyoruz.</p>
+          <ul class="about__features">
+            <li>
+              <span class="about__icon">✓</span>
+              Günlük taze malzeme
+            </li>
+            <li>
+              <span class="about__icon">✓</span>
+              Geleneksel tarifler
+            </li>
+            <li>
+              <span class="about__icon">✓</span>
+              Hijyen sertifikalı mutfak
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Neden Bizi Tercih Etmelisiniz -->
+    <section class="section" id="neden-biz">
+      <div class="container">
+        <div class="section__header fade-up">
+          <span class="section__tag">Farkımız</span>
+          <h2 class="section__title">Neden Bizi Tercih Etmelisiniz?</h2>
+          <p class="section__desc">Lezzet, kalite ve güvenin bir arada olduğu bir deneyim sunuyoruz.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card fade-up">
+            <div class="feature-card__icon">🥘</div>
+            <h3 class="feature-card__title">Ev Yapımı Lezzet</h3>
+            <p>Her yemek, yıllardır aktarılan aile tarifleriyle, küçük partiler halinde pişirilir.</p>
+          </div>
+          <div class="feature-card fade-up">
+            <div class="feature-card__icon">🚚</div>
+            <h3 class="feature-card__title">Hızlı Teslimat</h3>
+            <p>Beşiktaş ve çevresine ortalama 30 dakikada sıcak teslimat garantisi.</p>
+          </div>
+          <div class="feature-card fade-up">
+            <div class="feature-card__icon">🌿</div>
+            <h3 class="feature-card__title">Doğal Malzemeler</h3>
+            <p>Katkı maddesi kullanmadan, yerel üreticilerden temin edilen taze ürünler.</p>
+          </div>
+          <div class="feature-card fade-up">
+            <div class="feature-card__icon">💰</div>
+            <h3 class="feature-card__title">Uygun Fiyat</h3>
+            <p>Kaliteden ödün vermeden, her bütçeye uygun menü seçenekleri sunuyoruz.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Müşteri Yorumları -->
+    <section class="section section--cream" id="yorumlar">
+      <div class="container">
+        <div class="section__header fade-up">
+          <span class="section__tag">Mutlu Müşteriler</span>
+          <h2 class="section__title">Müşteri Yorumları</h2>
+          <p class="section__desc">Binlerce mutlu müşterimizin deneyimlerinden bazıları.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <blockquote class="review-card fade-up">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">"Kuru fasulyesi tam annemin yaptığı gibi! Her hafta sipariş veriyorum, bir kez bile hayal kırıklığı yaşamadım."</p>
+            <footer class="review-card__author">
+              <div class="review-card__avatar">AY</div>
+              <div>
+                <strong>Ayşe Yılmaz</strong>
+                <span>Beşiktaş</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card fade-up">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">"Ofis için toplu sipariş verdik, herkes çok beğendi. Porsiyonlar doyurucu, fiyatlar da çok makul."</p>
+            <footer class="review-card__author">
+              <div class="review-card__avatar">MK</div>
+              <div>
+                <strong>Mehmet Kaya</strong>
+                <span>Levent</span>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="review-card fade-up">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">"Hünkar beğendi muhteşemdi. Teslimat hızlı, yemekler sıcak geldi. Kesinlikle tavsiye ederim!"</p>
+            <footer class="review-card__author">
+              <div class="review-card__avatar">ZD</div>
+              <div>
+                <strong>Zeynep Demir</strong>
+                <span>Ortaköy</span>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeri -->
+    <section class="section" id="galeri">
+      <div class="container">
+        <div class="section__header fade-up">
+          <span class="section__tag">Lezzet Kareleri</span>
+          <h2 class="section__title">Galeri</h2>
+          <p class="section__desc">Mutfağımızdan ve sofralarımızdan seçilmiş kareler.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item fade-up gallery-item--wide">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&q=80" alt="Yemek galerisi 1" loading="lazy">
+          </div>
+          <div class="gallery-item fade-up">
+            <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb332b?w=600&q=80" alt="Yemek galerisi 2" loading="lazy">
+          </div>
+          <div class="gallery-item fade-up">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Yemek galerisi 3" loading="lazy">
+          </div>
+          <div class="gallery-item fade-up">
+            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&q=80" alt="Yemek galerisi 4" loading="lazy">
+          </div>
+          <div class="gallery-item fade-up gallery-item--wide">
+            <img src="https://images.unsplash.com/photo-1555939592-5829d9798160?w=900&q=80" alt="Yemek galerisi 5" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sipariş Çağrısı -->
+    <section class="cta" id="siparis">
+      <div class="cta__bg">
+        <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=1600&q=80" alt="Sipariş arka plan" loading="lazy">
+        <div class="cta__overlay"></div>
+      </div>
+      <div class="container cta__content fade-up">
+        <span class="section__tag section__tag--light">Hemen Sipariş Verin</span>
+        <h2 class="cta__title">Lezzetli Sofranız<br>Bir Tık Uzağınızda</h2>
+        <p class="cta__desc">Telefon, WhatsApp veya online sipariş ile günün menüsünü veya dilediğiniz yemeği kapınıza getirelim.</p>
+        <div class="cta__buttons">
+          <a href="tel:+902121234567" class="btn btn--primary btn--lg">📞 Hemen Ara</a>
+          <a href="https://wa.me/905551234567?text=Merhaba,%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp btn--lg">WhatsApp ile Sipariş</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- İletişim & Footer -->
+    <section class="section section--cream" id="iletisim">
+      <div class="container">
+        <div class="section__header fade-up">
+          <span class="section__tag">Bize Ulaşın</span>
+          <h2 class="section__title">İletişim</h2>
+          <p class="section__desc">Sorularınız, önerileriniz veya toplu sipariş talepleriniz için bize yazın.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info fade-up">
+            <div class="contact-info__item">
+              <div class="contact-info__icon">📍</div>
+              <div>
+                <strong>Adres</strong>
+                <p>Sinanpaşa Mah. Yıldız Cad. No:42<br>34353 Beşiktaş / İstanbul</p>
+              </div>
+            </div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon">📞</div>
+              <div>
+                <strong>Telefon</strong>
+                <p><a href="tel:+902121234567">(0212) 123 45 67</a></p>
+              </div>
+            </div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon">✉️</div>
+              <div>
+                <strong>E-posta</strong>
+                <p><a href="mailto:info@besiktasyoresel.com">info@besiktasyoresel.com</a></p>
+              </div>
+            </div>
+            <div class="contact-info__item">
+              <div class="contact-info__icon">🕐</div>
+              <div>
+                <strong>Çalışma Saatleri</strong>
+                <p>Pazartesi – Cumartesi: 10:00 – 22:00<br>Pazar: 11:00 – 21:00</p>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form fade-up" id="contact-form">
+            <div class="form-group">
+              <label for="name">Ad Soyad</label>
+              <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" placeholder="05XX XXX XX XX" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Mesajınız</label>
+              <textarea id="message" name="message" rows="4" placeholder="Mesajınızı yazın..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Mesaj Gönder</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#hero" class="nav__logo">
+          <span class="nav__logo-icon">🍲</span>
+          <span class="nav__logo-text">
+            <strong>Beşiktaş</strong>
+            <small>Yöresel Ev Yemekleri</small>
+          </span>
+        </a>
+        <p>Beşiktaş'ın en sevilen ev yemekleri restoranı. Geleneksel lezzetler, modern hizmet.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Hızlı Bağlantılar</h4>
+        <ul>
+          <li><a href="#gunun-menusu">Günün Menüsü</a></li>
+          <li><a href="#one-cikan">Yemekler</a></li>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#siparis">Sipariş Ver</a></li>
+        </ul>
+      </div>
+      <div class="footer__links">
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="tel:+902121234567">(0212) 123 45 67</a></li>
+          <li><a href="mailto:info@besiktasyoresel.com">info@besiktasyoresel.com</a></li>
+          <li>Beşiktaş / İstanbul</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>&copy; 2026 Beşiktaş Yöresel Ev Yemekleri. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/905551234567?text=Merhaba,%20sipari%C5%9F%20vermek%20istiyorum." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile iletişime geç">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
