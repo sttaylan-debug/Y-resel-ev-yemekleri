@@ -8,23 +8,40 @@
 
   <meta
     name="description"
-    content="Beşiktaş'ta her gün taze hazırlanan yöresel ev yemekleri. Günün menüsünü inceleyin, WhatsApp veya web sitesi üzerinden sipariş oluşturun."
+    content="Beşiktaş'ta her gün taze hazırlanan yöresel ev yemekleri. Aile sıcaklığında, özenli ve güvenilir bir sofra deneyimi."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+    rel="stylesheet"
   >
 
   <style>
     :root {
       --orange: #f47a20;
       --orange-dark: #d95f0b;
-      --green: #34784a;
-      --green-dark: #183c2b;
-      --cream: #fff8ef;
-      --cream-dark: #f4ecdf;
+      --orange-soft: #fff0e3;
+
+      --cream: #fff8f0;
+      --cream-dark: #f4eadc;
       --white: #ffffff;
-      --text: #18352a;
-      --muted: #68786f;
-      --border: rgba(24, 53, 42, 0.12);
-      --shadow: 0 24px 60px rgba(24, 53, 42, 0.12);
-      --radius: 28px;
+
+      --green: #2f7d4a;
+      --green-dark: #1e5a35;
+      --green-deep: #173d28;
+      --green-soft: #eaf4ed;
+
+      --text: #1e2a24;
+      --muted: #69756f;
+
+      --border: rgba(30, 90, 53, 0.13);
+      --shadow: 0 24px 70px rgba(30, 72, 45, 0.12);
+      --radius-lg: 34px;
+      --radius-md: 22px;
+      --container: 1240px;
     }
 
     * {
@@ -35,23 +52,18 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 120px;
+      scroll-padding-top: 110px;
     }
 
     body {
       overflow-x: hidden;
       color: var(--text);
       background: var(--cream);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "DM Sans", sans-serif;
     }
 
     body.menu-open {
       overflow: hidden;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
     }
 
     a {
@@ -59,76 +71,112 @@
       text-decoration: none;
     }
 
-    button,
-    input,
-    textarea {
-      font: inherit;
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     button {
+      font: inherit;
       cursor: pointer;
     }
 
     .container {
-      width: min(1180px, 90%);
+      width: min(var(--container), 90%);
       margin: 0 auto;
     }
 
     .section {
-      padding: 100px 0;
+      padding: 110px 0;
     }
 
-    .section-header {
-      max-width: 720px;
-      margin: 0 auto 52px;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--orange-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--orange);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 55px;
+    }
+
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
       text-align: center;
     }
 
-    .section-label {
-      display: inline-block;
-      margin-bottom: 14px;
-      color: var(--orange);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 2px;
+    .section-heading.center .eyebrow {
+      justify-content: center;
+    }
+
+    .section-heading.center .eyebrow::before {
+      display: none;
     }
 
     .section-title {
-      margin-bottom: 18px;
-      color: var(--green-dark);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(38px, 4.2vw, 58px);
-      line-height: 1.08;
+      color: var(--green-deep);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 5vw, 68px);
+      font-weight: 500;
+      line-height: 1.06;
+      letter-spacing: -1.8px;
     }
 
     .section-description {
+      max-width: 680px;
+      margin-top: 20px;
       color: var(--muted);
       font-size: 17px;
       line-height: 1.8;
     }
 
-    /* ÜST BİLGİ ŞERİDİ */
+    .section-heading.center .section-description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ÜST ŞERİT */
 
     .topbar {
-      min-height: 42px;
+      min-height: 40px;
       color: var(--white);
-      background: var(--orange);
+      background: var(--green-dark);
     }
 
     .topbar-inner {
-      min-height: 42px;
+      min-height: 40px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 28px;
-      font-size: 13px;
-      font-weight: 700;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 12px;
+      letter-spacing: 0.4px;
     }
 
-    .topbar-item {
-      display: inline-flex;
+    .topbar-group {
+      display: flex;
       align-items: center;
-      gap: 7px;
+      gap: 28px;
+    }
+
+    .topbar a,
+    .topbar span {
+      opacity: 0.9;
     }
 
     /* HEADER */
@@ -137,64 +185,70 @@
       position: sticky;
       z-index: 1000;
       top: 0;
-      min-height: 92px;
+      min-height: 94px;
       background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(24, 53, 42, 0.06);
-      backdrop-filter: blur(12px);
+      box-shadow: 0 12px 35px rgba(20, 62, 38, 0.05);
+      backdrop-filter: blur(16px);
     }
 
     .header-inner {
-      min-height: 92px;
+      min-height: 94px;
       display: grid;
-      grid-template-columns: minmax(240px, 1fr) auto minmax(240px, 1fr);
+      grid-template-columns: minmax(285px, 1fr) auto minmax(285px, 1fr);
       align-items: center;
-      gap: 24px;
+      gap: 28px;
     }
 
     .brand {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 13px;
+      gap: 15px;
       justify-self: start;
     }
 
-    .brand-logo {
-      width: 70px;
-      height: 70px;
+    .brand img {
+      width: 68px;
+      height: 68px;
+      padding: 4px;
       object-fit: contain;
+      background: var(--white);
+      border-radius: 18px;
     }
 
-    .brand-text {
-      color: var(--green-dark);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 1.05;
+    .brand-text strong {
+      display: block;
+      color: var(--green-deep);
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1;
     }
 
     .brand-text span {
       display: block;
-      margin-top: 5px;
-      color: var(--green);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 12px;
+      margin-top: 6px;
+      color: var(--orange);
+      font-size: 11px;
       font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
     }
 
     .nav {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 27px;
+      gap: 30px;
     }
 
     .nav a {
       position: relative;
       padding: 12px 0;
-      color: var(--green-dark);
-      font-size: 14px;
-      font-weight: 750;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
       transition: 0.25s ease;
     }
 
@@ -210,7 +264,7 @@
     }
 
     .nav a:hover {
-      color: var(--orange);
+      color: var(--orange-dark);
     }
 
     .nav a:hover::after {
@@ -224,165 +278,6 @@
       gap: 12px;
     }
 
-    .header-order {
-      min-height: 48px;
-      padding: 0 25px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      background: var(--orange);
-      border-radius: 999px;
-      box-shadow: 0 12px 27px rgba(244, 122, 32, 0.25);
-      font-size: 14px;
-      font-weight: 800;
-      transition: 0.25s ease;
-    }
-
-    .header-order:hover {
-      background: var(--orange-dark);
-      transform: translateY(-2px);
-    }
-
-    .menu-toggle {
-      width: 46px;
-      height: 46px;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      color: var(--green-dark);
-      background: var(--cream);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      font-size: 24px;
-    }
-
-    /* MOBİL MENÜ */
-
-    .mobile-nav {
-      position: fixed;
-      z-index: 2000;
-      inset: 0;
-      padding: 24px;
-      display: none;
-      background: rgba(24, 53, 42, 0.97);
-    }
-
-    .mobile-nav.active {
-      display: block;
-    }
-
-    .mobile-nav-close {
-      width: 48px;
-      height: 48px;
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 50%;
-      font-size: 25px;
-    }
-
-    .mobile-nav-links {
-      height: calc(100% - 70px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 26px;
-    }
-
-    .mobile-nav-links a {
-      color: var(--white);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
-    }
-
-    .mobile-nav-links .mobile-order {
-      margin-top: 10px;
-      padding: 16px 27px;
-      color: var(--white);
-      background: var(--orange);
-      border-radius: 999px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
-      font-weight: 800;
-    }
-
-    /* HERO */
-
-    .hero {
-      position: relative;
-      min-height: calc(100vh - 134px);
-      padding: 72px 0;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 8% 12%, rgba(244, 122, 32, 0.16), transparent 29%),
-        radial-gradient(circle at 92% 82%, rgba(52, 120, 74, 0.16), transparent 30%),
-        var(--cream);
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(480px, 1.08fr);
-      align-items: center;
-      gap: 72px;
-    }
-
-    .hero-content {
-      text-align: left;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      padding: 11px 17px;
-      margin-bottom: 24px;
-      color: var(--orange-dark);
-      background: rgba(244, 122, 32, 0.1);
-      border: 1px solid rgba(244, 122, 32, 0.35);
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .hero-title {
-      margin-bottom: 25px;
-      color: var(--green-dark);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(54px, 5.5vw, 84px);
-      line-height: 0.99;
-      letter-spacing: -3px;
-    }
-
-    .hero-title span {
-      display: block;
-      margin-top: 10px;
-      color: var(--orange);
-      font-style: italic;
-    }
-
-    .hero-description {
-      max-width: 610px;
-      margin-bottom: 32px;
-      color: #53665c;
-      font-size: 18px;
-      line-height: 1.75;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 42px;
-    }
-
     .button {
       min-height: 56px;
       padding: 0 28px;
@@ -391,495 +286,506 @@
       justify-content: center;
       border: 1px solid transparent;
       border-radius: 999px;
-      font-size: 15px;
-      font-weight: 800;
-      transition: 0.25s ease;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      transition: 0.3s ease;
     }
 
     .button-primary {
       color: var(--white);
       background: var(--orange);
-      box-shadow: 0 14px 30px rgba(244, 122, 32, 0.25);
+      box-shadow: 0 14px 35px rgba(244, 122, 32, 0.24);
     }
 
     .button-primary:hover {
       background: var(--orange-dark);
       transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(217, 95, 11, 0.28);
     }
 
     .button-secondary {
-      color: var(--green);
-      background: var(--white);
-      border-color: rgba(52, 120, 74, 0.3);
+      color: var(--green-dark);
+      background: rgba(255, 255, 255, 0.86);
+      border-color: rgba(47, 125, 74, 0.28);
     }
 
     .button-secondary:hover {
       color: var(--white);
       background: var(--green);
+      border-color: var(--green);
       transform: translateY(-3px);
     }
 
-    .hero-stats {
-      padding-top: 27px;
-      display: flex;
-      gap: 40px;
-      border-top: 1px solid var(--border);
+    .header-order {
+      min-height: 50px;
+      padding: 0 24px;
     }
 
-    .hero-stat strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--orange);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 29px;
+    .menu-toggle {
+      width: 48px;
+      height: 48px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: var(--green-dark);
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      font-size: 23px;
     }
 
-    .hero-stat span {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 750;
-    }
+    /* HERO */
 
-    /* HERO SLIDER */
-
-    .hero-visual {
+    .hero {
       position: relative;
-      min-height: 610px;
-    }
-
-    .hero-slider {
-      position: absolute;
-      inset: 0;
+      min-height: calc(100vh - 134px);
+      display: flex;
+      align-items: center;
       overflow: hidden;
-      background: var(--cream-dark);
-      border: 10px solid var(--white);
-      border-radius: 42px;
-      box-shadow: 0 38px 85px rgba(24, 53, 42, 0.22);
+      color: var(--white);
+      background:
+        linear-gradient(
+          90deg,
+          rgba(13, 42, 26, 0.94) 0%,
+          rgba(17, 56, 33, 0.86) 36%,
+          rgba(24, 73, 43, 0.42) 68%,
+          rgba(20, 58, 35, 0.26) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(13, 34, 22, 0.1),
+          rgba(13, 34, 22, 0.55)
+        ),
+        url("salon.jpeg") center center / cover no-repeat;
     }
 
-    .hero-slide {
+    .hero::before {
+      content: "";
       position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transform: scale(1.07);
-      transition: opacity 1s ease, transform 5s ease;
-    }
-
-    .hero-slide.active {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .hero-slider-overlay {
-      position: absolute;
-      z-index: 2;
       inset: 0;
       background:
-        linear-gradient(to top, rgba(16, 53, 34, 0.62), transparent 48%);
+        radial-gradient(
+          circle at 78% 55%,
+          rgba(244, 122, 32, 0.12),
+          transparent 32%
+        );
       pointer-events: none;
     }
 
-    .hero-food-name {
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      padding: 105px 0;
+    }
+
+    .hero-kicker {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 25px;
+      color: #ffc08d;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .hero-kicker::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--orange);
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      color: var(--white);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(64px, 7vw, 102px);
+      font-weight: 500;
+      line-height: 0.94;
+      letter-spacing: -4px;
+      text-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero h1 span {
+      display: block;
+      margin-top: 10px;
+      color: #ff9a4f;
+      font-style: italic;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin: 32px 0 36px;
+      color: rgba(255, 255, 255, 0.79);
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .hero .button-secondary {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.38);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero .button-secondary:hover {
+      background: var(--white);
+      color: var(--green-dark);
+    }
+
+    .hero-trust {
+      margin-top: 52px;
+      padding-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .trust-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #ffae71;
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      font-weight: 500;
+    }
+
+    .trust-item span {
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .hero-scroll {
       position: absolute;
       z-index: 3;
-      left: 28px;
-      bottom: 28px;
-      max-width: calc(100% - 150px);
-      padding: 13px 18px;
-      color: var(--white);
-      background: rgba(24, 60, 43, 0.8);
-      border: 1px solid rgba(255,255,255,.27);
-      border-radius: 14px;
-      font-weight: 800;
-      backdrop-filter: blur(8px);
-    }
-
-    .hero-dots {
-      position: absolute;
-      z-index: 4;
-      right: 28px;
-      bottom: 34px;
+      right: 5%;
+      bottom: 40px;
       display: flex;
-      gap: 8px;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transform: rotate(90deg);
+      transform-origin: right center;
     }
 
-    .hero-dot {
-      width: 9px;
-      height: 9px;
-      padding: 0;
-      background: rgba(255,255,255,.55);
-      border: 0;
-      border-radius: 50%;
-      transition: 0.25s ease;
-    }
-
-    .hero-dot.active {
-      width: 28px;
-      background: var(--orange);
-      border-radius: 999px;
-    }
-
-    .hero-shape-orange,
-    .hero-shape-green {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .hero-shape-orange {
-      z-index: -1;
-      left: -47px;
-      bottom: -37px;
-      width: 150px;
-      height: 150px;
-      background: rgba(244, 122, 32, 0.22);
-    }
-
-    .hero-shape-green {
-      z-index: -1;
-      top: -42px;
-      right: -54px;
-      width: 190px;
-      height: 190px;
-      background: rgba(52, 120, 74, 0.2);
+    .hero-scroll::after {
+      content: "";
+      width: 54px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.5);
     }
 
     /* GÜNÜN MENÜSÜ */
 
     .daily-menu {
-      background: var(--white);
+      background:
+        radial-gradient(
+          circle at 12% 20%,
+          rgba(244, 122, 32, 0.08),
+          transparent 26%
+        ),
+        var(--cream);
     }
 
-    .daily-menu-card {
+    .daily-layout {
       display: grid;
       grid-template-columns: 0.92fr 1.08fr;
       overflow: hidden;
-      background: var(--cream);
+      background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 34px;
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
     }
 
-    .daily-menu-image {
+    .daily-image {
       position: relative;
-      min-height: 590px;
+      min-height: 650px;
+      overflow: hidden;
     }
 
-    .daily-menu-image img {
+    .daily-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: 0.7s ease;
     }
 
-    .daily-date {
+    .daily-layout:hover .daily-image img {
+      transform: scale(1.04);
+    }
+
+    .daily-badge {
       position: absolute;
-      top: 25px;
-      left: 25px;
-      padding: 12px 18px;
+      top: 28px;
+      left: 28px;
+      padding: 11px 17px;
       color: var(--white);
       background: var(--orange);
       border-radius: 999px;
-      font-size: 13px;
-      font-weight: 800;
-      box-shadow: 0 12px 28px rgba(244,122,32,.25);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
-    .daily-menu-content {
-      padding: 55px;
+    .daily-content {
+      padding: 65px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: var(--white);
     }
 
-    .daily-menu-content h3 {
-      margin-bottom: 28px;
-      color: var(--green-dark);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 38px;
+    .daily-content h3 {
+      margin-bottom: 34px;
+      color: var(--green-deep);
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      font-weight: 500;
     }
 
     .daily-list {
-      margin-bottom: 30px;
-      display: grid;
-      gap: 7px;
+      margin-bottom: 34px;
     }
 
     .daily-item {
-      padding: 17px 0;
+      padding: 18px 0;
       display: grid;
       grid-template-columns: auto 1fr auto;
       align-items: center;
-      gap: 13px;
-      border-bottom: 1px dashed rgba(24, 53, 42, 0.16);
+      gap: 15px;
+      border-bottom: 1px solid var(--border);
     }
 
     .daily-item strong {
-      color: var(--green-dark);
+      color: var(--green-deep);
       font-size: 15px;
+      font-weight: 600;
     }
 
     .daily-line {
       height: 1px;
-      background: rgba(24, 53, 42, 0.13);
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(30, 90, 53, 0.22),
+          rgba(30, 90, 53, 0.22) 5px,
+          transparent 5px,
+          transparent 10px
+        );
     }
 
     .daily-item span {
-      color: #8b7769;
-      font-size: 13px;
-    }
-
-    .daily-note {
-      margin-bottom: 25px;
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.7;
     }
 
     /* YEMEKLER */
 
-    .foods-section {
-      background: var(--cream);
-    }
-
-    .category-tabs {
-      margin-bottom: 38px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .category-tab {
-      padding: 11px 18px;
-      color: var(--green-dark);
+    .foods {
       background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-weight: 750;
-      transition: 0.25s ease;
-    }
-
-    .category-tab:hover,
-    .category-tab.active {
-      color: var(--white);
-      background: var(--green);
-      border-color: var(--green);
     }
 
     .foods-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      gap: 28px;
     }
 
     .food-card {
       overflow: hidden;
-      background: var(--white);
+      background: var(--cream);
       border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: 0 14px 38px rgba(24,53,42,.08);
-      transition: 0.3s ease;
+      border-radius: var(--radius-md);
+      transition: 0.35s ease;
     }
 
     .food-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 22px 48px rgba(24,53,42,.14);
+      transform: translateY(-10px);
+      background: var(--white);
+      box-shadow: var(--shadow);
     }
 
-    .food-card-image {
+    .food-image {
       position: relative;
-      height: 245px;
+      height: 285px;
       overflow: hidden;
-      background: var(--cream-dark);
     }
 
-    .food-card-image img {
+    .food-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: 0.5s ease;
+      transition: 0.6s ease;
     }
 
-    .food-card:hover .food-card-image img {
-      transform: scale(1.06);
+    .food-card:hover .food-image img {
+      transform: scale(1.07);
     }
 
-    .food-badge {
+    .food-category {
       position: absolute;
-      top: 17px;
-      left: 17px;
+      top: 18px;
+      left: 18px;
       padding: 8px 12px;
       color: var(--white);
-      background: var(--orange);
+      background: rgba(30, 90, 53, 0.9);
       border-radius: 999px;
-      font-size: 11px;
-      font-weight: 800;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      backdrop-filter: blur(8px);
     }
 
-    .food-card-content {
-      padding: 23px;
+    .food-content {
+      padding: 28px;
     }
 
-    .food-card-content h3 {
-      margin-bottom: 9px;
-      color: var(--green-dark);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 24px;
+    .food-content h3 {
+      margin-bottom: 10px;
+      color: var(--green-deep);
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      font-weight: 500;
     }
 
-    .food-card-content p {
+    .food-content p {
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
-    .foods-action {
-      margin-top: 42px;
+    .foods-button {
+      margin-top: 45px;
       text-align: center;
     }
 
     /* HAKKIMIZDA */
 
-    .about-section {
-      background: var(--white);
+    .about {
+      background: var(--green-soft);
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
+      grid-template-columns: 1.05fr 0.95fr;
       align-items: center;
-      gap: 75px;
+      gap: 90px;
     }
 
     .about-images {
       position: relative;
-      min-height: 610px;
+      min-height: 650px;
     }
 
-    .about-main-image {
+    .about-main {
       position: absolute;
-      inset: 0 80px 60px 0;
+      inset: 0 80px 55px 0;
       overflow: hidden;
-      border-radius: 34px;
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
     }
 
-    .about-main-image img {
+    .about-main img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .about-small-image {
+    .about-small {
       position: absolute;
       right: 0;
       bottom: 0;
-      width: 48%;
-      height: 270px;
+      width: 49%;
+      height: 275px;
       overflow: hidden;
-      background: var(--cream);
-      border: 9px solid var(--white);
+      border: 9px solid var(--green-soft);
       border-radius: 28px;
-      box-shadow: 0 18px 42px rgba(24,53,42,.16);
+      box-shadow: 0 20px 55px rgba(30, 90, 53, 0.18);
     }
 
-    .about-small-image img {
+    .about-small img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .about-content .section-label {
-      margin-bottom: 14px;
-    }
-
-    .about-content h2 {
-      margin-bottom: 24px;
-      color: var(--green-dark);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(40px, 4.4vw, 59px);
-      line-height: 1.08;
-    }
-
-    .about-content > p {
-      margin-bottom: 18px;
+    .about-content p {
+      margin-top: 22px;
       color: var(--muted);
       font-size: 16px;
-      line-height: 1.85;
+      line-height: 1.9;
     }
 
-    .about-features {
-      margin: 32px 0;
+    .features {
+      margin: 35px 0;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
     }
 
-    .about-feature {
+    .feature {
       padding: 19px;
       display: flex;
       align-items: center;
       gap: 13px;
-      background: var(--cream);
+      background: rgba(255, 255, 255, 0.75);
       border: 1px solid var(--border);
-      border-radius: 17px;
+      border-radius: 18px;
     }
 
-    .about-feature-icon {
-      width: 43px;
-      height: 43px;
-      flex: 0 0 43px;
+    .feature-icon {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--white);
       background: var(--green);
-      border-radius: 13px;
-      font-size: 18px;
+      border-radius: 50%;
+      font-weight: 700;
     }
 
-    .about-feature span {
-      color: var(--green-dark);
+    .feature span {
+      color: var(--green-deep);
       font-size: 13px;
-      font-weight: 800;
-      line-height: 1.45;
+      font-weight: 600;
+      line-height: 1.5;
     }
 
     /* GALERİ */
 
-    .gallery-section {
-      background: var(--green-dark);
-    }
-
-    .gallery-section .section-label {
-      color: #ff9b4a;
-    }
-
-    .gallery-section .section-title,
-    .gallery-section .section-description {
-      color: var(--white);
-    }
-
-    .gallery-section .section-description {
-      opacity: 0.74;
+    .gallery {
+      background: var(--cream);
     }
 
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-auto-rows: 220px;
-      gap: 16px;
+      grid-auto-rows: 225px;
+      gap: 17px;
     }
 
     .gallery-item {
       position: relative;
       overflow: hidden;
-      border-radius: 21px;
-      cursor: pointer;
+      border-radius: 22px;
     }
 
     .gallery-item:nth-child(1) {
@@ -899,275 +805,211 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: 0.5s ease;
+      transition: 0.55s ease;
     }
 
     .gallery-item::after {
-      content: "Görseli İncele";
+      content: "Soframızdan";
       position: absolute;
       inset: 0;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-end;
+      padding: 24px;
       color: var(--white);
-      background: rgba(244, 122, 32, 0.68);
+      background:
+        linear-gradient(
+          to top,
+          rgba(21, 70, 39, 0.8),
+          transparent 60%
+        );
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
       opacity: 0;
-      font-weight: 800;
-      transition: 0.3s ease;
+      transition: 0.35s ease;
     }
 
     .gallery-item:hover img {
-      transform: scale(1.08);
+      transform: scale(1.07);
     }
 
     .gallery-item:hover::after {
       opacity: 1;
     }
 
-    /* YORUMLAR */
+    /* CTA */
 
-    .reviews-section {
-      background: var(--cream);
-    }
-
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .review-card {
-      padding: 31px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: 0 13px 38px rgba(24,53,42,.07);
-    }
-
-    .review-stars {
-      margin-bottom: 17px;
-      color: var(--orange);
-      letter-spacing: 3px;
-      font-size: 17px;
-    }
-
-    .review-card p {
-      min-height: 114px;
-      margin-bottom: 22px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.75;
-    }
-
-    .review-user {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-    }
-
-    .review-avatar {
-      width: 47px;
-      height: 47px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      background: var(--green);
-      border-radius: 50%;
-      font-weight: 900;
-    }
-
-    .review-user strong {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--green-dark);
-    }
-
-    .review-user span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* SİPARİŞ CTA */
-
-    .order-cta {
-      padding: 85px 0;
+    .cta {
+      padding: 95px 0;
       color: var(--white);
       background:
-        linear-gradient(120deg, rgba(24, 60, 43, 0.96), rgba(52, 120, 74, 0.9)),
-        url("Izgara Köfte.jpg") center/cover;
+        linear-gradient(
+          110deg,
+          rgba(20, 72, 40, 0.98),
+          rgba(47, 125, 74, 0.9)
+        ),
+        url("Izgara Köfte.jpeg") center / cover;
     }
 
-    .order-cta-inner {
+    .cta-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 40px;
+      gap: 50px;
     }
 
-    .order-cta-content {
-      max-width: 740px;
+    .cta-content {
+      max-width: 760px;
     }
 
-    .order-cta-content small {
-      color: #ffab68;
-      font-weight: 800;
-      letter-spacing: 2px;
+    .cta-content .eyebrow {
+      color: #ffb37b;
     }
 
-    .order-cta-content h2 {
-      margin: 14px 0 16px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(38px, 4.7vw, 61px);
-      line-height: 1.08;
+    .cta-content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(44px, 5vw, 70px);
+      font-weight: 500;
+      line-height: 1.05;
     }
 
-    .order-cta-content p {
-      max-width: 650px;
-      color: rgba(255,255,255,.78);
+    .cta-content p {
+      max-width: 620px;
+      margin-top: 20px;
+      color: rgba(255, 255, 255, 0.72);
       font-size: 17px;
-      line-height: 1.75;
-    }
-
-    .order-cta .button-primary {
-      flex: 0 0 auto;
-      background: var(--orange);
+      line-height: 1.8;
     }
 
     /* İLETİŞİM */
 
-    .contact-section {
+    .contact {
       background: var(--white);
     }
 
-    .contact-grid {
+    .contact-layout {
       display: grid;
-      grid-template-columns: 0.87fr 1.13fr;
+      grid-template-columns: 0.85fr 1.15fr;
       overflow: hidden;
       background: var(--cream);
       border: 1px solid var(--border);
-      border-radius: 32px;
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
     }
 
     .contact-info {
-      padding: 50px;
+      padding: 55px;
       color: var(--white);
-      background: var(--green-dark);
+      background: var(--green-deep);
     }
 
     .contact-info h2 {
-      margin-bottom: 18px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 42px;
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      font-weight: 500;
     }
 
     .contact-info > p {
-      margin-bottom: 35px;
-      color: rgba(255,255,255,.72);
-      line-height: 1.75;
+      margin: 18px 0 36px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.8;
     }
 
     .contact-list {
       display: grid;
-      gap: 16px;
+      gap: 15px;
     }
 
     .contact-item {
-      padding: 18px;
+      padding: 19px;
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 17px;
     }
 
     .contact-icon {
-      width: 43px;
-      height: 43px;
-      flex: 0 0 43px;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--green-dark);
       background: var(--white);
-      border-radius: 13px;
-      font-size: 17px;
+      border-radius: 50%;
     }
 
     .contact-item strong {
       display: block;
-      margin-bottom: 6px;
-      font-size: 14px;
+      margin-bottom: 5px;
+      font-size: 13px;
     }
 
     .contact-item span,
     .contact-item a {
-      color: rgba(255,255,255,.72);
+      color: rgba(255, 255, 255, 0.68);
       font-size: 13px;
       line-height: 1.6;
     }
 
-    .contact-map {
-      min-height: 570px;
-      background: var(--cream-dark);
-    }
-
+    .contact-map,
     .contact-map iframe {
       width: 100%;
-      height: 100%;
-      min-height: 570px;
+      min-height: 590px;
       border: 0;
     }
 
     /* FOOTER */
 
     .footer {
-      padding: 70px 0 27px;
-      color: rgba(255,255,255,.72);
-      background: #102c20;
+      padding: 75px 0 28px;
+      color: rgba(255, 255, 255, 0.65);
+      background: #133c25;
     }
 
     .footer-grid {
-      padding-bottom: 45px;
+      padding-bottom: 48px;
       display: grid;
       grid-template-columns: 1.4fr 0.8fr 0.9fr 0.9fr;
-      gap: 45px;
-      border-bottom: 1px solid rgba(255,255,255,.1);
+      gap: 50px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .footer-brand {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 13px;
+      gap: 14px;
       margin-bottom: 20px;
     }
 
     .footer-brand img {
-      width: 67px;
-      height: 67px;
+      width: 68px;
+      height: 68px;
+      padding: 5px;
       object-fit: contain;
       background: var(--white);
-      border-radius: 15px;
+      border-radius: 17px;
     }
 
     .footer-brand strong {
       color: var(--white);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 20px;
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      font-weight: 500;
     }
 
     .footer-about p {
-      max-width: 370px;
+      max-width: 380px;
       font-size: 14px;
       line-height: 1.8;
     }
 
     .footer-column h3 {
-      margin-bottom: 21px;
+      margin-bottom: 22px;
       color: var(--white);
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .footer-column ul {
@@ -1180,11 +1022,10 @@
     .footer-column li {
       font-size: 13px;
       line-height: 1.6;
-      transition: 0.2s ease;
     }
 
     .footer-column a:hover {
-      color: var(--orange);
+      color: #ff9c56;
     }
 
     .footer-bottom {
@@ -1202,65 +1043,72 @@
 
     /* WHATSAPP */
 
-    .whatsapp-button {
+    .whatsapp {
       position: fixed;
       z-index: 1500;
-      right: 25px;
-      bottom: 25px;
+      right: 24px;
+      bottom: 24px;
       width: 62px;
       height: 62px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--white);
-      background: #20c968;
+      background: #24c96b;
       border: 4px solid var(--white);
       border-radius: 50%;
-      box-shadow: 0 14px 35px rgba(32, 201, 104, 0.36);
-      font-size: 25px;
-      font-weight: 900;
-      transition: 0.25s ease;
+      box-shadow: 0 15px 38px rgba(36, 201, 107, 0.34);
+      font-size: 23px;
+      font-weight: 700;
+      transition: 0.3s ease;
     }
 
-    .whatsapp-button:hover {
+    .whatsapp:hover {
       transform: scale(1.08);
     }
 
-    /* GALERİ MODAL */
+    /* MOBİL MENÜ */
 
-    .image-modal {
+    .mobile-menu {
       position: fixed;
-      z-index: 3000;
+      z-index: 2500;
       inset: 0;
       padding: 25px;
       display: none;
-      align-items: center;
-      justify-content: center;
-      background: rgba(5, 20, 13, 0.94);
+      background: rgba(19, 60, 37, 0.98);
     }
 
-    .image-modal.active {
-      display: flex;
+    .mobile-menu.active {
+      display: block;
     }
 
-    .image-modal img {
-      max-width: 92vw;
-      max-height: 88vh;
-      object-fit: contain;
-      border-radius: 18px;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 23px;
-      right: 25px;
+    .mobile-close {
       width: 48px;
       height: 48px;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: var(--white);
-      background: rgba(255,255,255,.13);
-      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 50%;
       font-size: 26px;
+    }
+
+    .mobile-links {
+      height: calc(100% - 70px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .mobile-links a {
+      color: var(--white);
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
     }
 
     /* RESPONSIVE */
@@ -1278,33 +1126,22 @@
         display: flex;
       }
 
-      .hero-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-content {
-        max-width: 780px;
-      }
-
-      .hero-visual {
-        min-height: 570px;
-      }
-
-      .foods-grid,
-      .reviews-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about-grid {
+      .daily-layout,
+      .about-grid,
+      .contact-layout {
         grid-template-columns: 1fr;
       }
 
       .about-images {
-        min-height: 640px;
+        min-height: 670px;
+      }
+
+      .foods-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .footer-grid {
-        grid-template-columns: 1.4fr 1fr 1fr;
+        grid-template-columns: 1.3fr 1fr 1fr;
       }
 
       .footer-about {
@@ -1313,22 +1150,8 @@
     }
 
     @media (max-width: 850px) {
-      .topbar-item:nth-child(3) {
+      .topbar-group:last-child {
         display: none;
-      }
-
-      .daily-menu-card,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .daily-menu-image {
-        min-height: 470px;
-      }
-
-      .contact-map,
-      .contact-map iframe {
-        min-height: 430px;
       }
 
       .gallery-grid {
@@ -1346,7 +1169,7 @@
         height: 250px;
       }
 
-      .order-cta-inner {
+      .cta-inner {
         align-items: flex-start;
         flex-direction: column;
       }
@@ -1354,35 +1177,39 @@
 
     @media (max-width: 680px) {
       .section {
-        padding: 74px 0;
+        padding: 78px 0;
       }
 
       .topbar-inner {
-        min-height: 38px;
-        gap: 10px;
+        min-height: 36px;
+        justify-content: center;
         font-size: 10px;
       }
 
-      .topbar-item:nth-child(2) {
+      .topbar-group {
+        gap: 13px;
+      }
+
+      .topbar-group span:nth-child(2) {
         display: none;
       }
 
       .header,
       .header-inner {
-        min-height: 77px;
+        min-height: 78px;
       }
 
-      .brand-logo {
+      .brand img {
         width: 53px;
         height: 53px;
       }
 
-      .brand-text {
-        font-size: 15px;
+      .brand-text strong {
+        font-size: 16px;
       }
 
       .brand-text span {
-        font-size: 10px;
+        font-size: 9px;
       }
 
       .header-order {
@@ -1390,17 +1217,17 @@
       }
 
       .hero {
-        min-height: auto;
-        padding: 52px 0 68px;
+        min-height: calc(100vh - 114px);
+        background-position: 58% center;
       }
 
-      .hero-inner {
-        gap: 43px;
+      .hero-content {
+        padding: 70px 0;
       }
 
-      .hero-title {
-        font-size: 50px;
-        letter-spacing: -2px;
+      .hero h1 {
+        font-size: 57px;
+        letter-spacing: -2.5px;
       }
 
       .hero-description {
@@ -1411,50 +1238,37 @@
         flex-direction: column;
       }
 
-      .button {
+      .hero .button {
         width: 100%;
       }
 
-      .hero-stats {
-        gap: 18px;
+      .hero-trust {
+        gap: 20px;
         justify-content: space-between;
       }
 
-      .hero-stat strong {
-        font-size: 23px;
+      .trust-item strong {
+        font-size: 22px;
       }
 
-      .hero-stat span {
-        font-size: 10px;
+      .trust-item span {
+        font-size: 9px;
       }
 
-      .hero-visual {
+      .hero-scroll {
+        display: none;
+      }
+
+      .daily-image {
         min-height: 430px;
       }
 
-      .hero-slider {
-        border-width: 6px;
-        border-radius: 28px;
-      }
-
-      .hero-food-name {
-        left: 18px;
-        bottom: 20px;
-        max-width: calc(100% - 115px);
-        font-size: 12px;
-      }
-
-      .hero-dots {
-        right: 18px;
-        bottom: 25px;
-      }
-
-      .daily-menu-content {
+      .daily-content {
         padding: 35px 25px;
       }
 
-      .daily-menu-content h3 {
-        font-size: 31px;
+      .daily-content h3 {
+        font-size: 36px;
       }
 
       .daily-item {
@@ -1466,29 +1280,28 @@
         display: none;
       }
 
-      .foods-grid,
-      .reviews-grid {
+      .foods-grid {
         grid-template-columns: 1fr;
       }
 
-      .food-card-image {
-        height: 260px;
+      .food-image {
+        height: 275px;
       }
 
       .about-images {
         min-height: 480px;
       }
 
-      .about-main-image {
-        inset: 0 38px 50px 0;
+      .about-main {
+        inset: 0 35px 45px 0;
       }
 
-      .about-small-image {
+      .about-small {
         width: 57%;
-        height: 210px;
+        height: 205px;
       }
 
-      .about-features {
+      .features {
         grid-template-columns: 1fr;
       }
 
@@ -1501,12 +1314,8 @@
         height: auto;
       }
 
-      .review-card p {
-        min-height: auto;
-      }
-
       .contact-info {
-        padding: 35px 25px;
+        padding: 37px 25px;
       }
 
       .footer-grid {
@@ -1517,53 +1326,35 @@
         align-items: flex-start;
         flex-direction: column;
       }
-
-      .whatsapp-button {
-        right: 16px;
-        bottom: 16px;
-        width: 56px;
-        height: 56px;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ÜST BİLGİ ŞERİDİ -->
-
   <div class="topbar">
     <div class="container topbar-inner">
-      <a class="topbar-item" href="tel:+902123274439">
-        ☎ 0 (212) 327 4439
-      </a>
+      <div class="topbar-group">
+        <a href="tel:+902123274439">☎ 0 (212) 327 44 39</a>
+        <span>İstanbul · Beşiktaş</span>
+      </div>
 
-      <span class="topbar-item">
-        ● İstanbul, Beşiktaş
-      </span>
-
-      <span class="topbar-item">
-        Her gün taze ev yemekleri
-      </span>
+      <div class="topbar-group">
+        <span>Her gün taze hazırlanır</span>
+        <span>Aile sıcaklığında ev yemekleri</span>
+      </div>
     </div>
   </div>
-
-  <!-- HEADER -->
 
   <header class="header">
     <div class="container header-inner">
 
       <a href="#anasayfa" class="brand">
-        <!-- Logo görünmezse logo.jpg yerine GitHub'daki gerçek dosya adını yaz -->
-        <img
-          class="brand-logo"
-          src="logo.png"
-          alt="Beşiktaş Yöresel Ev Yemekleri Logo"
-        >
+        <img src="logo.png" alt="Beşiktaş Yöresel Ev Yemekleri">
 
         <div class="brand-text">
-          Beşiktaş
-          <span>Yöresel Ev Yemekleri</span>
+          <strong>Beşiktaş Yöresel</strong>
+          <span>Ev Yemekleri</span>
         </div>
       </a>
 
@@ -1578,7 +1369,7 @@
 
       <div class="header-actions">
         <a
-          class="header-order"
+          class="button button-primary header-order"
           href="https://www.besiktasyoreselevyemekleri.com/siparis-olustur/"
           target="_blank"
           rel="noopener"
@@ -1589,7 +1380,7 @@
         <button
           class="menu-toggle"
           id="menuToggle"
-          aria-label="Mobil menüyü aç"
+          aria-label="Menüyü aç"
         >
           ☰
         </button>
@@ -1598,57 +1389,38 @@
     </div>
   </header>
 
-  <!-- MOBİL MENÜ -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">×</button>
 
-  <div class="mobile-nav" id="mobileNav">
-    <button
-      class="mobile-nav-close"
-      id="mobileNavClose"
-      aria-label="Mobil menüyü kapat"
-    >
-      ×
-    </button>
-
-    <nav class="mobile-nav-links">
+    <nav class="mobile-links">
       <a href="#anasayfa">Ana Sayfa</a>
       <a href="#gunun-menusu">Günün Menüsü</a>
       <a href="#yemekler">Yemekler</a>
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#galeri">Galeri</a>
       <a href="#iletisim">İletişim</a>
-
-      <a
-        class="mobile-order"
-        href="https://www.besiktasyoreselevyemekleri.com/siparis-olustur/"
-        target="_blank"
-        rel="noopener"
-      >
-        Sipariş Oluştur
-      </a>
     </nav>
   </div>
 
   <main>
 
-    <!-- HERO -->
-
     <section class="hero" id="anasayfa">
-      <div class="container hero-inner">
-
+      <div class="container">
         <div class="hero-content">
-          <div class="hero-eyebrow">
-            BEŞİKTAŞ'IN KALBİNDE AİLE SICAKLIĞI
+
+          <div class="hero-kicker">
+            Beşiktaş · Aile Sofrası
           </div>
 
-          <h1 class="hero-title">
+          <h1>
             Ev Yemeğinin
             <span>En Lezzetli Hali</span>
           </h1>
 
           <p class="hero-description">
             Annelerin elinden çıkmış gibi sıcak, doyurucu ve yöresel
-            lezzetler. Her gün taze pişen yemeklerimizle sofranıza
-            geliyoruz.
+            lezzetler. Her gün taze hazırlanan yemeklerimizle,
+            Beşiktaş'ın kalbinde gerçek bir aile sofrası sunuyoruz.
           </p>
 
           <div class="hero-buttons">
@@ -1669,131 +1441,74 @@
             </a>
           </div>
 
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <strong>15+</strong>
-              <span>Yıllık deneyim</span>
+          <div class="hero-trust">
+            <div class="trust-item">
+              <strong>25+</strong>
+              <span>Yıllık aile tecrübesi</span>
             </div>
 
-            <div class="hero-stat">
+            <div class="trust-item">
               <strong>50+</strong>
-              <span>Günlük yemek</span>
+              <span>Günlük yemek seçeneği</span>
             </div>
 
-            <div class="hero-stat">
+            <div class="trust-item">
               <strong>4.9</strong>
-              <span>Müşteri puanı</span>
+              <span>Misafir memnuniyeti</span>
             </div>
           </div>
+
         </div>
+      </div>
 
-        <div class="hero-visual">
-          <div class="hero-shape-green"></div>
-          <div class="hero-shape-orange"></div>
-
-          <div class="hero-slider" id="heroSlider">
-
-            <img
-              class="hero-slide active"
-              src="Mercimek Çorbası.jpg"
-              alt="Mercimek Çorbası"
-              data-name="Mercimek Çorbası"
-            >
-
-            <img
-              class="hero-slide"
-              src="Karnıyarık.jpg"
-              alt="Karnıyarık"
-              data-name="Karnıyarık"
-            >
-
-            <img
-              class="hero-slide"
-              src="Izgara Köfte.jpg"
-              alt="Izgara Köfte"
-              data-name="Izgara Köfte"
-            >
-
-            <img
-              class="hero-slide"
-              src="Kuru Fasulye.jpg"
-              alt="Kuru Fasulye"
-              data-name="Kuru Fasulye"
-            >
-
-            <img
-              class="hero-slide"
-              src="İzmir Köfte.jpg"
-              alt="İzmir Köfte"
-              data-name="İzmir Köfte"
-            >
-
-            <img
-              class="hero-slide"
-              src="Biber Dolması.jpg"
-              alt="Biber Dolması"
-              data-name="Biber Dolması"
-            >
-
-            <div class="hero-slider-overlay"></div>
-
-            <div class="hero-food-name" id="heroFoodName">
-              Mercimek Çorbası
-            </div>
-
-            <div class="hero-dots" id="heroDots"></div>
-          </div>
-        </div>
-
+      <div class="hero-scroll">
+        Aşağı Kaydır
       </div>
     </section>
-
-    <!-- GÜNÜN MENÜSÜ -->
 
     <section class="section daily-menu" id="gunun-menusu">
       <div class="container">
 
-        <div class="section-header">
-          <span class="section-label">HER GÜN TAZE</span>
+        <div class="section-heading center">
+          <span class="eyebrow">Her Gün Taze</span>
 
           <h2 class="section-title">
-            Günün Menüsü
+            Bugünün Sofrası
           </h2>
 
           <p class="section-description">
-            Mutfağımızdan her gün sıcak, doyurucu ve birbirinden farklı
-            ev yemekleri çıkıyor.
+            Günlük hazırlanan çorbalar, ana yemekler ve tamamlayıcı
+            lezzetlerle sıcak ve doyurucu bir öğün.
           </p>
         </div>
 
-        <div class="daily-menu-card">
+        <div class="daily-layout">
 
-          <div class="daily-menu-image">
-            <img
-              src="Kuru Fasulye.jpg"
-              alt="Günün menüsü"
-            >
+          <div class="daily-image">
+            <img src="Kuru Fasulye.jpeg" alt="Günün menüsü">
 
-            <div class="daily-date">
+            <span class="daily-badge">
               Bugünün Özel Menüsü
-            </div>
+            </span>
           </div>
 
-          <div class="daily-menu-content">
-            <h3>Bugünün Sofrası</h3>
+          <div class="daily-content">
+            <span class="eyebrow">Mutfaktan Yeni Çıktı</span>
+
+            <h3>Günün Menüsü</h3>
 
             <div class="daily-list">
 
               <div class="daily-item">
                 <strong>Mercimek Çorbası</strong>
                 <div class="daily-line"></div>
-                <span>Tereyağlı, limonlu</span>
+                <span>Limon ve tereyağıyla</span>
               </div>
 
               <div class="daily-item">
                 <strong>Kuru Fasulye</strong>
                 <div class="daily-line"></div>
-                <span>Pilav eşliğinde</span>
+                <span>Ev usulü</span>
               </div>
 
               <div class="daily-item">
@@ -1816,19 +1531,13 @@
 
             </div>
 
-            <p class="daily-note">
-              Günün menüsü ürün durumuna göre değişiklik gösterebilir.
-              Güncel bilgi için bizi arayabilir veya sipariş sayfamızı
-              ziyaret edebilirsiniz.
-            </p>
-
             <a
               class="button button-primary"
               href="https://www.besiktasyoreselevyemekleri.com/siparis-olustur/"
               target="_blank"
               rel="noopener"
             >
-              Menüyü İncele ve Sipariş Ver
+              Menüyü İncele
             </a>
           </div>
 
@@ -1836,146 +1545,118 @@
       </div>
     </section>
 
-    <!-- YEMEKLER -->
-
-    <section class="section foods-section" id="yemekler">
+    <section class="section foods" id="yemekler">
       <div class="container">
 
-        <div class="section-header">
-          <span class="section-label">MUTFAĞIMIZDAN</span>
+        <div class="section-heading">
+          <span class="eyebrow">Mutfağımızdan</span>
 
           <h2 class="section-title">
-            Sevilen Ev Yemekleri
+            Geleneksel Lezzetler,
+            Modern Bir Sunum
           </h2>
 
           <p class="section-description">
-            Çorbalardan ana yemeklere, ızgaralardan tatlılara kadar
-            herkesin damak zevkine uygun seçenekler.
+            Ev yemeklerinin güven veren lezzetini, özenli sunum ve
+            kaliteli malzemelerle sofranıza getiriyoruz.
           </p>
-        </div>
-
-        <div class="category-tabs">
-          <button class="category-tab active">Tümü</button>
-          <button class="category-tab">Çorbalar</button>
-          <button class="category-tab">Ana Yemekler</button>
-          <button class="category-tab">Izgaralar</button>
-          <button class="category-tab">Salatalar</button>
-          <button class="category-tab">Tatlılar</button>
         </div>
 
         <div class="foods-grid">
 
           <article class="food-card">
-            <div class="food-card-image">
-              <img
-                src="Mercimek Çorbası.jpg"
-                alt="Mercimek Çorbası"
-              >
-              <span class="food-badge">ÇORBA</span>
+            <div class="food-image">
+              <img src="Mercimek Çorbası.jpeg" alt="Mercimek Çorbası">
+              <span class="food-category">Çorba</span>
             </div>
 
-            <div class="food-card-content">
+            <div class="food-content">
               <h3>Mercimek Çorbası</h3>
               <p>
-                Geleneksel usulle hazırlanan, sıcak ve doyurucu
-                mercimek çorbası.
+                Geleneksel tarifle hazırlanan sıcak, hafif ve
+                doyurucu başlangıç.
               </p>
             </div>
           </article>
 
           <article class="food-card">
-            <div class="food-card-image">
-              <img
-                src="Karnıyarık.jpg"
-                alt="Karnıyarık"
-              >
-              <span class="food-badge">ANA YEMEK</span>
+            <div class="food-image">
+              <img src="Karnıyarık.jpeg" alt="Karnıyarık">
+              <span class="food-category">Ana Yemek</span>
             </div>
 
-            <div class="food-card-content">
+            <div class="food-content">
               <h3>Karnıyarık</h3>
               <p>
-                Kıymalı iç harcı ve özenle pişirilmiş patlıcanıyla
-                klasik ev yemeği lezzeti.
+                Özenle hazırlanan kıymalı harcı ve yumuşacık
+                patlıcanıyla klasik bir ev yemeği.
               </p>
             </div>
           </article>
 
           <article class="food-card">
-            <div class="food-card-image">
-              <img
-                src="Izgara Köfte.jpg"
-                alt="Izgara Köfte"
-              >
-              <span class="food-badge">IZGARA</span>
+            <div class="food-image">
+              <img src="Izgara Köfte.jpeg" alt="Izgara Köfte">
+              <span class="food-category">Izgara</span>
             </div>
 
-            <div class="food-card-content">
+            <div class="food-content">
               <h3>Izgara Köfte</h3>
               <p>
-                Özel baharatlarla hazırlanan köfteler, sıcak garnitür
-                ve salata eşliğinde.
+                Özel baharat karışımı, salata ve sıcak garnitür
+                eşliğinde servis edilir.
               </p>
             </div>
           </article>
 
           <article class="food-card">
-            <div class="food-card-image">
-              <img
-                src="Kuru Fasulye.jpg"
-                alt="Kuru Fasulye"
-              >
-              <span class="food-badge">GELENEKSEL</span>
+            <div class="food-image">
+              <img src="Biber Dolması.jpeg" alt="Biber Dolması">
+              <span class="food-category">Geleneksel</span>
             </div>
 
-            <div class="food-card-content">
-              <h3>Kuru Fasulye</h3>
-              <p>
-                Türk mutfağının vazgeçilmezi, günlük taze pişen
-                kuru fasulye.
-              </p>
-            </div>
-          </article>
-
-          <article class="food-card">
-            <div class="food-card-image">
-              <img
-                src="Biber Dolması.jpg"
-                alt="Biber Dolması"
-              >
-              <span class="food-badge">ZEYTİNYAĞLI</span>
-            </div>
-
-            <div class="food-card-content">
+            <div class="food-content">
               <h3>Biber Dolması</h3>
               <p>
-                Lezzetli iç harcı ve geleneksel tarifiyle hazırlanan
-                ev yapımı dolma.
+                Ev yapımı iç harcı ve geleneksel tarifiyle sevilen
+                yöresel lezzet.
               </p>
             </div>
           </article>
 
           <article class="food-card">
-            <div class="food-card-image">
-              <img
-                src="Sütlaç.jpg"
-                alt="Sütlaç"
-              >
-              <span class="food-badge">TATLI</span>
+            <div class="food-image">
+              <img src="İzmir Köfte.jpeg" alt="İzmir Köfte">
+              <span class="food-category">Ana Yemek</span>
             </div>
 
-            <div class="food-card-content">
+            <div class="food-content">
+              <h3>İzmir Köfte</h3>
+              <p>
+                Fırında pişen köfte, patates ve domatesin
+                dengeli birlikteliği.
+              </p>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="food-image">
+              <img src="Sütlaç.jpeg" alt="Sütlaç">
+              <span class="food-category">Tatlı</span>
+            </div>
+
+            <div class="food-content">
               <h3>Sütlaç</h3>
               <p>
-                Hafif kıvamı ve geleneksel tarifiyle sofraların
-                sevilen ev tatlısı.
+                Hafif kıvamı ve geleneksel tarifiyle ev yapımı
+                sütlü tatlı.
               </p>
             </div>
           </article>
 
         </div>
 
-        <div class="foods-action">
+        <div class="foods-button">
           <a
             class="button button-primary"
             href="https://menu.mycardpro.tr/qr/yoeresel-ev-yemekleri"
@@ -1989,131 +1670,114 @@
       </div>
     </section>
 
-    <!-- HAKKIMIZDA -->
-
-    <section class="section about-section" id="hakkimizda">
+    <section class="section about" id="hakkimizda">
       <div class="container about-grid">
 
         <div class="about-images">
-          <div class="about-main-image">
-            <img
-              src="Salata Tabağı.jpg"
-              alt="Taze hazırlanan yemekler"
-            >
+          <div class="about-main">
+            <img src="Salata Tabağı.jpeg" alt="Günlük taze yemekler">
           </div>
 
-          <div class="about-small-image">
-            <img
-              src="İçli Köfte.jpg"
-              alt="İçli Köfte"
-            >
+          <div class="about-small">
+            <img src="İçli Köfte.jpeg" alt="İçli Köfte">
           </div>
         </div>
 
         <div class="about-content">
-          <span class="section-label">BİZİM HİKÂYEMİZ</span>
+          <span class="eyebrow">Bizim Hikâyemiz</span>
 
-          <h2>
-            Beşiktaş'ta Sıcak Bir Aile Sofrası
+          <h2 class="section-title">
+            Aile Sıcaklığında,
+            Özenli Bir Sofra
           </h2>
 
           <p>
             Beşiktaş Yöresel Ev Yemekleri, geleneksel Türk mutfağının
-            sevilen tariflerini günlük ve taze olarak hazırlayan sıcak
-            bir aile işletmesidir.
+            sevilen tariflerini günlük ve taze olarak hazırlayan bir
+            aile işletmesidir.
           </p>
 
           <p>
-            Çorbalarımızdan ana yemeklerimize, ızgaralarımızdan
-            mezelerimize kadar her ürünümüzü güvenilir malzemelerle,
-            özenle ve ev yemeği sıcaklığıyla hazırlıyoruz.
+            Her tabağımızda ev yemeğinin güvenini, kaliteli
+            malzemelerin doğallığını ve misafirperverliğin sıcaklığını
+            bir araya getiriyoruz.
           </p>
 
-          <div class="about-features">
+          <div class="features">
 
-            <div class="about-feature">
-              <div class="about-feature-icon">✓</div>
+            <div class="feature">
+              <div class="feature-icon">✓</div>
               <span>Her gün taze hazırlanan yemekler</span>
             </div>
 
-            <div class="about-feature">
-              <div class="about-feature-icon">✓</div>
+            <div class="feature">
+              <div class="feature-icon">✓</div>
               <span>Geleneksel Türk mutfağı tarifleri</span>
             </div>
 
-            <div class="about-feature">
-              <div class="about-feature-icon">✓</div>
-              <span>Güvenilir ve özenle seçilen malzemeler</span>
+            <div class="feature">
+              <div class="feature-icon">✓</div>
+              <span>Özenle seçilen güvenilir malzemeler</span>
             </div>
 
-            <div class="about-feature">
-              <div class="about-feature-icon">✓</div>
+            <div class="feature">
+              <div class="feature-icon">✓</div>
               <span>Paket servis ve gel-al seçenekleri</span>
             </div>
 
           </div>
 
-          <a
-            class="button button-secondary"
-            href="#iletisim"
-          >
-            Bizi Daha Yakından Tanıyın
+          <a class="button button-secondary" href="#iletisim">
+            Bizi Ziyaret Edin
           </a>
         </div>
 
       </div>
     </section>
 
-    <!-- GALERİ -->
-
-    <section class="section gallery-section" id="galeri">
+    <section class="section gallery" id="galeri">
       <div class="container">
 
-        <div class="section-header">
-          <span class="section-label">SOFRAMIZDAN KARELER</span>
+        <div class="section-heading center">
+          <span class="eyebrow">Soframızdan Kareler</span>
 
           <h2 class="section-title">
-            Yemek Galerisi
+            Her Tabakta Bir Ev Hikâyesi
           </h2>
-
-          <p class="section-description">
-            Her gün mutfağımızda özenle hazırlanan sıcak ve iştah açıcı
-            lezzetlerden bazıları.
-          </p>
         </div>
 
         <div class="gallery-grid">
 
           <div class="gallery-item">
-            <img src="Izgara Köfte.jpg" alt="Izgara Köfte">
+            <img src="Izgara Köfte.jpeg" alt="Izgara Köfte">
           </div>
 
           <div class="gallery-item">
-            <img src="Karnıyarık.jpg" alt="Karnıyarık">
+            <img src="Karnıyarık.jpeg" alt="Karnıyarık">
           </div>
 
           <div class="gallery-item">
-            <img src="Brokoli.jpg" alt="Brokoli">
+            <img src="Çoban Salata.jpeg" alt="Çoban Salata">
           </div>
 
           <div class="gallery-item">
-            <img src="Çoban Salata.jpg" alt="Çoban Salata">
+            <img src="İzmir Köfte.jpeg" alt="İzmir Köfte">
           </div>
 
           <div class="gallery-item">
-            <img src="İzmir Köfte.jpg" alt="İzmir Köfte">
+            <img src="Kıbrıs Tatlısı.jpeg" alt="Kıbrıs Tatlısı">
           </div>
 
           <div class="gallery-item">
-            <img src="Kıbrıs Tatlısı.jpg" alt="Kıbrıs Tatlısı">
+            <img src="Tavuk Sote.jpeg" alt="Tavuk Sote">
           </div>
 
           <div class="gallery-item">
-            <img src="Tavuk Sote.jpg" alt="Tavuk Sote">
+            <img src="Magnolya.jpeg" alt="Magnolya">
           </div>
 
           <div class="gallery-item">
-            <img src="Magnolya.jpg" alt="Magnolya">
+            <img src="Yaprak Sarma.jpeg" alt="Yaprak Sarma">
           </div>
 
         </div>
@@ -2121,95 +1785,15 @@
       </div>
     </section>
 
-    <!-- YORUMLAR -->
+    <section class="cta">
+      <div class="container cta-inner">
 
-    <section class="section reviews-section">
-      <div class="container">
-
-        <div class="section-header">
-          <span class="section-label">MİSAFİRLERİMİZDEN</span>
-
-          <h2 class="section-title">
-            Soframızdan Mutlu Ayrılanlar
-          </h2>
-
-          <p class="section-description">
-            Lezzetimizi ve hizmetimizi deneyimleyen misafirlerimizin
-            yorumları.
-          </p>
-        </div>
-
-        <div class="reviews-grid">
-
-          <article class="review-card">
-            <div class="review-stars">★★★★★</div>
-
-            <p>
-              Yemekler gerçekten ev yapımı gibi. Özellikle kuru fasulye
-              ve pilav çok başarılıydı. Porsiyonları da oldukça doyurucu.
-            </p>
-
-            <div class="review-user">
-              <div class="review-avatar">A</div>
-
-              <div>
-                <strong>Ahmet K.</strong>
-                <span>Google yorumu</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="review-card">
-            <div class="review-stars">★★★★★</div>
-
-            <p>
-              Beşiktaş'ta ev yemeği için en sık tercih ettiğimiz yer.
-              Menü her gün değişiyor ve yemekler her zaman sıcak geliyor.
-            </p>
-
-            <div class="review-user">
-              <div class="review-avatar">E</div>
-
-              <div>
-                <strong>Elif S.</strong>
-                <span>Google yorumu</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="review-card">
-            <div class="review-stars">★★★★★</div>
-
-            <p>
-              Çorbaları, ana yemekleri ve tatlıları çok lezzetli.
-              Personel ilgili, paket servis de hızlı ve düzenli.
-            </p>
-
-            <div class="review-user">
-              <div class="review-avatar">M</div>
-
-              <div>
-                <strong>Mehmet T.</strong>
-                <span>Google yorumu</span>
-              </div>
-            </div>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SİPARİŞ CTA -->
-
-    <section class="order-cta">
-      <div class="container order-cta-inner">
-
-        <div class="order-cta-content">
-          <small>SICAK YEMEK, KOLAY SİPARİŞ</small>
+        <div class="cta-content">
+          <span class="eyebrow">Sıcak Yemek, Kolay Sipariş</span>
 
           <h2>
-            Bugünün Lezzetlerini Sofranıza Getirelim
+            Bugünün Lezzetlerini
+            Sofranıza Getirelim
           </h2>
 
           <p>
@@ -2230,32 +1814,30 @@
       </div>
     </section>
 
-    <!-- İLETİŞİM -->
-
-    <section class="section contact-section" id="iletisim">
+    <section class="section contact" id="iletisim">
       <div class="container">
 
-        <div class="section-header">
-          <span class="section-label">BİZE ULAŞIN</span>
+        <div class="section-heading center">
+          <span class="eyebrow">Bize Ulaşın</span>
 
           <h2 class="section-title">
             Soframıza Bekleriz
           </h2>
 
           <p class="section-description">
-            Sipariş, menü bilgisi ve diğer sorularınız için bizimle
+            Sipariş, günün menüsü veya diğer sorularınız için bizimle
             iletişime geçebilirsiniz.
           </p>
         </div>
 
-        <div class="contact-grid">
+        <div class="contact-layout">
 
           <div class="contact-info">
-            <h2>İletişim Bilgileri</h2>
+            <h2>İletişim</h2>
 
             <p>
-              Beşiktaş'ta sıcak, taze ve doyurucu ev yemekleri için
-              bizi ziyaret edin veya siparişinizi oluşturun.
+              Beşiktaş'ın kalbinde sıcak ve taze ev yemekleri için
+              bizi ziyaret edin.
             </p>
 
             <div class="contact-list">
@@ -2276,9 +1858,7 @@
 
                 <div>
                   <strong>Adres</strong>
-                  <span>
-                    Beşiktaş, İstanbul
-                  </span>
+                  <span>Beşiktaş, İstanbul</span>
                 </div>
               </div>
 
@@ -2287,24 +1867,7 @@
 
                 <div>
                   <strong>Çalışma Saatleri</strong>
-                  <span>
-                    Pazartesi – Cumartesi: 10.00 – 21.00
-                  </span>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon">✓</div>
-
-                <div>
-                  <strong>Sipariş</strong>
-                  <a
-                    href="https://www.besiktasyoreselevyemekleri.com/siparis-olustur/"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    Online sipariş sayfasını aç
-                  </a>
+                  <span>Her gün 10.00 – 21.00</span>
                 </div>
               </div>
 
@@ -2313,10 +1876,9 @@
 
           <div class="contact-map">
             <iframe
-              title="Beşiktaş Yöresel Ev Yemekleri Harita"
+              title="Beşiktaş Yöresel Ev Yemekleri"
               src="https://www.google.com/maps?q=Beşiktaş%20İstanbul&output=embed"
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
 
@@ -2327,24 +1889,19 @@
 
   </main>
 
-  <!-- FOOTER -->
-
   <footer class="footer">
     <div class="container">
 
       <div class="footer-grid">
 
         <div class="footer-about">
-          <a href="#anasayfa" class="footer-brand">
-            <img
-              src="logo.png"
-              alt="Beşiktaş Yöresel Ev Yemekleri Logo"
-            >
+          <div class="footer-brand">
+            <img src="logo.png" alt="Beşiktaş Yöresel Ev Yemekleri">
 
             <strong>
               Beşiktaş Yöresel Ev Yemekleri
             </strong>
-          </a>
+          </div>
 
           <p>
             Geleneksel Türk mutfağının sevilen tariflerini her gün
@@ -2364,7 +1921,7 @@
         </div>
 
         <div class="footer-column">
-          <h3>Hizmetlerimiz</h3>
+          <h3>Hizmetler</h3>
 
           <ul>
             <li>Paket servis</li>
@@ -2390,7 +1947,6 @@
               <a
                 href="https://www.besiktasyoreselevyemekleri.com/siparis-olustur/"
                 target="_blank"
-                rel="noopener"
               >
                 Sipariş oluştur
               </a>
@@ -2402,8 +1958,8 @@
 
       <div class="footer-bottom">
         <span>
-          © <span id="currentYear"></span>
-          Beşiktaş Yöresel Ev Yemekleri. Tüm hakları saklıdır.
+          © <span id="year"></span>
+          Beşiktaş Yöresel Ev Yemekleri
         </span>
 
         <span>
@@ -2414,211 +1970,45 @@
     </div>
   </footer>
 
-  <!-- WHATSAPP -->
-
   <a
-    class="whatsapp-button"
+    class="whatsapp"
     href="https://wa.me/902123274439"
     target="_blank"
-    rel="noopener"
-    aria-label="WhatsApp üzerinden iletişim"
+    aria-label="WhatsApp"
   >
     ☎
   </a>
 
-  <!-- GALERİ MODAL -->
-
-  <div class="image-modal" id="imageModal">
-    <button
-      class="modal-close"
-      id="modalClose"
-      aria-label="Görseli kapat"
-    >
-      ×
-    </button>
-
-    <img
-      id="modalImage"
-      src=""
-      alt="Büyütülmüş yemek görseli"
-    >
-  </div>
-
   <script>
-    /* HERO SLIDER */
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileClose = document.getElementById("mobileClose");
+    const mobileLinks = document.querySelectorAll(".mobile-links a");
 
-    const heroSlides = Array.from(
-      document.querySelectorAll(".hero-slide")
-    );
-
-    const heroDotsContainer =
-      document.getElementById("heroDots");
-
-    const heroFoodName =
-      document.getElementById("heroFoodName");
-
-    const heroSlider =
-      document.getElementById("heroSlider");
-
-    let activeHeroSlide = 0;
-    let heroTimer;
-
-    heroSlides.forEach((slide, index) => {
-      const dot = document.createElement("button");
-
-      dot.className =
-        index === 0 ? "hero-dot active" : "hero-dot";
-
-      dot.setAttribute(
-        "aria-label",
-        `${index + 1}. yemek görseline geç`
-      );
-
-      dot.addEventListener("click", () => {
-        showHeroSlide(index);
-        restartHeroSlider();
-      });
-
-      heroDotsContainer.appendChild(dot);
-    });
-
-    const heroDots = Array.from(
-      document.querySelectorAll(".hero-dot")
-    );
-
-    function showHeroSlide(index) {
-      heroSlides[activeHeroSlide].classList.remove("active");
-      heroDots[activeHeroSlide].classList.remove("active");
-
-      activeHeroSlide = index;
-
-      heroSlides[activeHeroSlide].classList.add("active");
-      heroDots[activeHeroSlide].classList.add("active");
-
-      heroFoodName.textContent =
-        heroSlides[activeHeroSlide].dataset.name ||
-        "Günün Lezzeti";
-    }
-
-    function nextHeroSlide() {
-      const nextIndex =
-        (activeHeroSlide + 1) % heroSlides.length;
-
-      showHeroSlide(nextIndex);
-    }
-
-    function startHeroSlider() {
-      heroTimer = setInterval(nextHeroSlide, 4000);
-    }
-
-    function restartHeroSlider() {
-      clearInterval(heroTimer);
-      startHeroSlider();
-    }
-
-    heroSlider.addEventListener("mouseenter", () => {
-      clearInterval(heroTimer);
-    });
-
-    heroSlider.addEventListener("mouseleave", () => {
-      restartHeroSlider();
-    });
-
-    startHeroSlider();
-
-    /* MOBİL MENÜ */
-
-    const menuToggle =
-      document.getElementById("menuToggle");
-
-    const mobileNav =
-      document.getElementById("mobileNav");
-
-    const mobileNavClose =
-      document.getElementById("mobileNavClose");
-
-    const mobileNavLinks =
-      document.querySelectorAll(".mobile-nav-links a");
-
-    function openMobileMenu() {
-      mobileNav.classList.add("active");
+    function openMenu() {
+      mobileMenu.classList.add("active");
       document.body.classList.add("menu-open");
     }
 
-    function closeMobileMenu() {
-      mobileNav.classList.remove("active");
+    function closeMenu() {
+      mobileMenu.classList.remove("active");
       document.body.classList.remove("menu-open");
     }
 
-    menuToggle.addEventListener(
-      "click",
-      openMobileMenu
-    );
+    menuToggle.addEventListener("click", openMenu);
+    mobileClose.addEventListener("click", closeMenu);
 
-    mobileNavClose.addEventListener(
-      "click",
-      closeMobileMenu
-    );
-
-    mobileNavLinks.forEach((link) => {
-      link.addEventListener(
-        "click",
-        closeMobileMenu
-      );
+    mobileLinks.forEach(link => {
+      link.addEventListener("click", closeMenu);
     });
 
-    /* GALERİ BÜYÜTME */
-
-    const galleryItems =
-      document.querySelectorAll(".gallery-item");
-
-    const imageModal =
-      document.getElementById("imageModal");
-
-    const modalImage =
-      document.getElementById("modalImage");
-
-    const modalClose =
-      document.getElementById("modalClose");
-
-    galleryItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        const image = item.querySelector("img");
-
-        modalImage.src = image.src;
-        modalImage.alt = image.alt;
-
-        imageModal.classList.add("active");
-        document.body.classList.add("menu-open");
-      });
-    });
-
-    function closeImageModal() {
-      imageModal.classList.remove("active");
-      document.body.classList.remove("menu-open");
-    }
-
-    modalClose.addEventListener(
-      "click",
-      closeImageModal
-    );
-
-    imageModal.addEventListener("click", (event) => {
-      if (event.target === imageModal) {
-        closeImageModal();
-      }
-    });
-
-    document.addEventListener("keydown", (event) => {
+    document.addEventListener("keydown", event => {
       if (event.key === "Escape") {
-        closeMobileMenu();
-        closeImageModal();
+        closeMenu();
       }
     });
 
-    /* YIL */
-
-    document.getElementById("currentYear").textContent =
+    document.getElementById("year").textContent =
       new Date().getFullYear();
   </script>
 
